@@ -1,0 +1,31 @@
+﻿<div ng-controller="Tasks.Controller as tasksCtrl">
+    Filter by:
+    <form name="tasks">
+        <input name="taskfilter" type="text"
+               ng-model="tasksCtrl.filter"
+               ng-minlength="5"
+               ng-maxlength="15"
+               required />
+
+        <div ng-messages="tasks.taskfilter.$error" role="alert">
+            <div ng-message="required">El campo está vacìo</div>
+            <div ng-message="minlength">El largo del campo no es suficiente</div>
+            <div ng-message="maxlength">El largo del campo es demasiado</div>
+        </div>
+
+        <pre>tasks.taskfilter.$error = {{ tasks.taskfilter.$error | json }}</pre>
+
+    </form>
+    Order by:
+    <select ng-model="tasksCtrl.orderBy">
+        <option value="StartDate">Start Date</option>
+        <option value="CreationDate">Creation Date</option>
+    </select>
+    <div ng-repeat="task in tasksCtrl.tasks | filter: tasksCtrl.filter| orderBy: tasksCtrl.orderBy">
+        <h2>Task Name: {{task.Name}}</h2>
+        <p>Description: {{task.Description}}</p>
+        <p>Creation Date: {{tasksCtrl.printDate(task.CreationDate)}}</p>
+        <p>Start Date: {{tasksCtrl.printDate(task.StartDate)}}</p>
+        <p>Due Date: {{tasksCtrl.printDate(task.DueDate)}}</p>
+    </div>
+</div>
