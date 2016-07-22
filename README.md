@@ -9,3 +9,6 @@
 - Inyección de dependencias y minificación.
 - One Way Binding
 
+## Presentación
+
+Pueden ver la presentación [aquí](http://disaplicaciones2ort0316.github.io/Clase10)
