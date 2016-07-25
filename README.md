@@ -11,4 +11,4 @@
 
 ## Presentación
 
-Pueden ver la presentación [aquí](http://disaplicaciones2ort0316.github.io/Clase10)
+Pueden ver la presentación [aquí](http://ort-da2.github.io/Clase10)
